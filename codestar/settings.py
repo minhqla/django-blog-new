@@ -93,7 +93,9 @@ CSRF_TRUSTED_ORIGINS = [
 
 DATABASES = {
     'default': dj_database_url.config(
-        default='postgres://localhost'
+        default='postgres://localhost',
+        conn_max_age=600,
+        ssl_require=True
     )
 }
 
