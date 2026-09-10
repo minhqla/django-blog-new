@@ -22,3 +22,13 @@ for (let button of deleteButtons) {
         deleteModal.show();
     });
 }
+
+for (let button of editButtons) {
+    button.addEventListener("click", (e) => {
+        let commentId = e.target.getAttribute("comment_id");
+        let commentContent = document.getElementById(`comment${commentId}`).innerText;
+
+        commentText.value = commentContent;
+        commentForm.setAttribute("action", `edit_comment/${commentId}`);
+    });
+}
